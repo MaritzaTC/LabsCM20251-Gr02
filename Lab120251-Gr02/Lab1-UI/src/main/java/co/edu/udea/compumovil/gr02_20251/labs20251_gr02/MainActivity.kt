@@ -14,6 +14,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.UserInfoViewModel
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.templates.MiUIOrientado
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.templates.PersonalInfo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.tokens.Labs20251Gr02Theme
 
@@ -26,7 +29,8 @@ class MainActivity : ComponentActivity() {
             Labs20251Gr02Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()){innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
-                       PersonalInfo()
+                        val userInfoViewModel: UserInfoViewModel = viewModel()
+                        MiUIOrientado(viewModel = userInfoViewModel)
                     }
                 }
             }

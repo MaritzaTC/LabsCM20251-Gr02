@@ -16,24 +16,25 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.S
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun RadioGroupAndIcon(){
+fun GenderSelection(selectedSex: String, onSexChange: (String) -> Unit){
     Row {
         SexIcon("Sexo:")
         Column {
             val sexTypes = listOf("Hombre", "Mujer", "Otro(?)")
-            val currentSelection = remember { mutableStateOf(sexTypes.first()) }
+
             RadioGroup(
                 modifier = Modifier
                     .padding(16.dp)
                     .fillMaxWidth(),
                 items = sexTypes,
-                selection = currentSelection.value,
+                selection = selectedSex,
                 onItemClick = { clickedItem ->
-                    currentSelection.value = clickedItem
+                    onSexChange(clickedItem)
                 }
             )
         }
     }
 }
+
 
 

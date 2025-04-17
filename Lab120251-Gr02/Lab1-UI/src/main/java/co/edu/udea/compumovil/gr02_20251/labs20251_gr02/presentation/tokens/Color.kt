@@ -9,7 +9,7 @@ val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
 
 val MintGreen = Color(0xFF30C88F)
-val SoftGray = Color(0xFFF2F0F0)
+val SoftGray = Color(0xFFFFFCFC)
 val Pink40 = Color(0xFF7D5260)
 
 
@@ -19,5 +19,5 @@ val LinearBlue = Color(0xFF2AB6D9)
 val GreenToBlueGradient = Brush.linearGradient(
     colors = listOf(LinearGreen, LinearBlue),
     start = Offset(0f, 0f),
-    end = Offset(1000f, 0f)
+    end = Offset(1000f, 4f)
 )

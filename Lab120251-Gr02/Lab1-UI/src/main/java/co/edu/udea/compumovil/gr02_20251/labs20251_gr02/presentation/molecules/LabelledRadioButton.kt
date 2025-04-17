@@ -23,7 +23,7 @@ fun LabelledRadioButton(
     selected: Boolean,
     onClick: (() -> Unit)?,
     enabled: Boolean = true,
-    colors: RadioButtonColors = RadioButtonDefaults.colors( // Pasamos los colores a la función
+    colors: RadioButtonColors = RadioButtonDefaults.colors(
         selectedColor = Color(0xFF30C88F),
         unselectedColor = Color(0xFFBBBBBB)
     )

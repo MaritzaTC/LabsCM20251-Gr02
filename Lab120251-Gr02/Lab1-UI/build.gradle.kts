@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation ("androidx.core:core:1.16.0")
     implementation ("androidx.compose.ui:ui-graphics:1.4.0")
     implementation(libs.androidx.core.ktx)

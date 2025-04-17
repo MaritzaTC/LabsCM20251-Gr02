@@ -24,8 +24,7 @@ fun SexIcon(usertext: String) {
     Column(
         modifier = Modifier
             .width(80.dp)
-            .padding(top = 10.dp,)
-
+            .padding(top = 16.dp,)
     ) {
         Row(
             horizontalArrangement = Arrangement.Start,

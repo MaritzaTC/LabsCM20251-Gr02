@@ -21,7 +21,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.UserT
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun IconInput(textuser: String) {
+fun IconInput(textuser: String, value: String, onValueChange: (String) -> Unit) {
     Column(
         modifier = Modifier.fillMaxWidth().padding(5.dp)
 
@@ -35,6 +35,6 @@ fun IconInput(textuser: String) {
             UserText(text = textuser)
         }
         Spacer(modifier = Modifier.height(9.dp))
-        UserTextField()
+        UserTextField(value = value, onValueChange = onValueChange)
     }
 }

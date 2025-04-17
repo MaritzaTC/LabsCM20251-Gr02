@@ -10,7 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.SexIcon
 
 
@@ -18,10 +20,9 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.S
 @Composable
 fun GenderSelection(selectedSex: String, onSexChange: (String) -> Unit){
     Row {
-        SexIcon("Sexo:")
+        SexIcon(stringResource(id = R.string.sex_personal_info))
         Column {
-            val sexTypes = listOf("Hombre", "Mujer", "Otro(?)")
-
+            val sexTypes = listOf(stringResource(id = R.string.man_personal_info), stringResource(id = R.string.women_personal_info), stringResource(id = R.string.other_personal_info))
             RadioGroup(
                 modifier = Modifier
                     .padding(16.dp)

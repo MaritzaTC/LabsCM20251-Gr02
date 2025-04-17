@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.SimpleNavbar
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.TitleText
@@ -24,18 +26,18 @@ fun PersonalInfo(viewModel: UserInfoViewModel){
       Column(
   ) {    SimpleNavbar()
           Logo()
-          TitleText(text = "Información personal")
+          TitleText(text = stringResource(id = R.string.personal_info))
           Column(
               modifier = Modifier
               .padding(start = 70.dp, top = 16.dp)
           ) {
               IconInput(
-                  textuser = "Nombres:",
+                  textuser = stringResource(id = R.string.name_personal_info),
                   value = viewModel.name.value,
                   onValueChange = { viewModel.updateName(it) }
               )
               IconInput(
-                  textuser = "Apellidos:",
+                  textuser = stringResource(id = R.string.lastname_personal_info),
                   value = viewModel.lastName.value,
                   onValueChange = { viewModel.updateLastname(it) }
               )

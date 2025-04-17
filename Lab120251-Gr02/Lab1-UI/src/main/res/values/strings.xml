@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Labs20251-Gr02</string>
+    <string name="personal_info">Información Personal</string>
+    <string name="name_personal_info">Nombres:</string>
+    <string name="lastname_personal_info">Apellidos:</string>
+    <string name="sex_personal_info">Sexo:</string>
+    <string name="man_personal_info">Hombre</string>
+    <string name="women_personal_info">Mujer</string>
+    <string name="other_personal_info">Otro(?)</string>
 </resources>

@@ -14,7 +14,7 @@ fun SimpleNavbar() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(56.dp)
+            .height(35.dp)
             .background(GreenToBlueGradient)
     )
 }

@@ -7,4 +7,6 @@
     <string name="man_personal_info">Hombre</string>
     <string name="women_personal_info">Mujer</string>
     <string name="other_personal_info">Otro(?)</string>
+    <string name="final_form">Gracias! Por completar la información correctamente. </string>
+
 </resources>

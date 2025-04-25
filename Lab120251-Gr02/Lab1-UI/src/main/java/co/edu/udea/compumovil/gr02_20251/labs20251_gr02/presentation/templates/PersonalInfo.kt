@@ -12,6 +12,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PeopleIcon
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PersonIcon
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.SimpleNavbar
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.TitleText
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.IconInput
@@ -21,33 +23,35 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun PersonalInfo(viewModel: UserInfoViewModel){
-  Box(  modifier = Modifier
-      .fillMaxSize(),){
-      Column(
-  ) {    SimpleNavbar()
-          Logo()
-          TitleText(text = stringResource(id = R.string.personal_info))
-          Column(
-              modifier = Modifier
-              .padding(start = 70.dp, top = 16.dp)
-          ) {
-              IconInput(
-                  textuser = stringResource(id = R.string.name_personal_info),
-                  value = viewModel.name.value,
-                  onValueChange = { viewModel.updateName(it) }
-              )
-              IconInput(
-                  textuser = stringResource(id = R.string.lastname_personal_info),
-                  value = viewModel.lastName.value,
-                  onValueChange = { viewModel.updateLastname(it) }
-              )
-              GenderSelection(
-                  selectedSex = viewModel.sex.value,
-                  onSexChange = {
-                      viewModel.updateSex(it)
-                  })
-          }
-  }
+    Box(  modifier = Modifier
+        .fillMaxSize(),){
+        Column(
+        ) {    SimpleNavbar()
+            Logo()
+            TitleText(text = stringResource(id = R.string.personal_info))
+            Column(
+                modifier = Modifier
+                    .padding(start = 70.dp, top = 16.dp)
+            ) {
+                IconInput(
+                    icon = { PersonIcon() },
+                    textuser = stringResource(id = R.string.name_personal_info),
+                    value = viewModel.name.value,
+                    onValueChange = { viewModel.updateName(it) }
+                )
+                IconInput(
+                    icon = { PersonIcon() },
+                    textuser = stringResource(id = R.string.lastname_personal_info),
+                    value = viewModel.lastName.value,
+                    onValueChange = { viewModel.updateLastname(it) }
+                )
+                GenderSelection(
+                    selectedSex = viewModel.sex.value,
+                    onSexChange = {
+                        viewModel.updateSex(it)
+                    })
+            }
+        }
 
-  }
+    }
 }

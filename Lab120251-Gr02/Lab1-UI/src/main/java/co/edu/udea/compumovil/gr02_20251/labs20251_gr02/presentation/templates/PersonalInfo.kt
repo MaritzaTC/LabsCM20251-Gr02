@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PersonIcon
@@ -30,7 +31,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun PersonalInfo(viewModel: UserInfoViewModel) {
+fun PersonalInfo(viewModel: UserInfoViewModel,  navController: NavController) {
     val context = LocalContext.current
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -87,6 +88,7 @@ fun PersonalInfo(viewModel: UserInfoViewModel) {
                             println(viewModel.sex.value)
                             println("Nació el ${viewModel.birthDate.value}")
                             println(viewModel.educationLevel.value)
+                            navController.navigate("contact")
                         } else {
                             Toast.makeText(
                                 context,
@@ -94,6 +96,7 @@ fun PersonalInfo(viewModel: UserInfoViewModel) {
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
+
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {

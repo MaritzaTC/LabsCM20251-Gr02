@@ -13,6 +13,6 @@
     <string name="city_contact_info">Ciudad</string>
     <string name="address_contact_info">Dirección</string>
     <string name="final_form">Gracias! Por completar la información correctamente. </string>
-
+    <string name="final_button">llenar otro cuestionario</string>
 
 </resources>

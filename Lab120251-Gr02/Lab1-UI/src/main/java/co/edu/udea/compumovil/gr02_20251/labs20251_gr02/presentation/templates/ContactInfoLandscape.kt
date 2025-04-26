@@ -7,11 +7,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.AddressIcon
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.CityIcon
@@ -25,7 +28,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ContactInfoLandscape(viewModel: UserInfoViewModel) {
+fun ContactInfoLandscape(viewModel: UserInfoViewModel,  navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier.fillMaxSize()
@@ -78,6 +81,9 @@ fun ContactInfoLandscape(viewModel: UserInfoViewModel) {
                         value = viewModel.address.value,
                         onValueChange = { viewModel.updateAddress(it) }
                     )
+                    Button(onClick = {navController.navigate("final")}) {
+                        Text(stringResource(id = R.string.final_button))
+                    }
                 }
             }
         }

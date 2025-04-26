@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PeopleIcon
@@ -24,7 +25,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun PersonalInfoLandscape(viewModel: UserInfoViewModel) {
+fun PersonalInfoLandscape(viewModel: UserInfoViewModel,  navController: NavController) {
     val context = LocalContext.current
 
     Column(
@@ -32,7 +33,7 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel) {
     ) {
         SimpleNavbar()
         TitleText(text = stringResource(id = R.string.personal_info))
-        Logo(size = 100.dp)
+        //Logo(size = 60.dp)
 
         Row(
             modifier = Modifier
@@ -42,7 +43,7 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel) {
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .padding(end = 8.dp)
+                    .padding(end = 2.dp)
             ) {
                 IconInput(
                     icon = { PeopleIcon() },
@@ -63,7 +64,6 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel) {
                     onDateSelected = { viewModel.updateBirthDate(it) }
                 )
             }
-
             Column(
                 modifier = Modifier
                     .weight(1f)
@@ -90,6 +90,7 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel) {
                             println(viewModel.sex.value)
                             println("Nació el ${viewModel.birthDate.value}")
                             println(viewModel.educationLevel.value)
+                            navController.navigate("contact")
                         } else {
                             Toast.makeText(
                                 context,

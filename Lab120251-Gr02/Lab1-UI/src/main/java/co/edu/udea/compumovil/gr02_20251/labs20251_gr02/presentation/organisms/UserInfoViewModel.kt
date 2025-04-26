@@ -1,9 +1,12 @@
 package co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms
 
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 class UserInfoViewModel : ViewModel() {
+    var currentPage by mutableStateOf("personal")
     var name = mutableStateOf("")
     var lastName = mutableStateOf("")
     var sex = mutableStateOf("")

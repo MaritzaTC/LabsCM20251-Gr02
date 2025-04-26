@@ -30,7 +30,7 @@ fun MiUIOrientado(viewModel: UserInfoViewModel) {
             NavHost(navController, startDestination = "personal"){
                 composable("personal") { PersonalInfoLandscape(viewModel, navController) }
                 composable("contact") { ContactInfoLandscape(viewModel, navController) }
-                composable("final") { FinalForm(viewModel, navController) }
+                composable("final") { FinalFormLandscape(viewModel, navController) }
             }
 
         }

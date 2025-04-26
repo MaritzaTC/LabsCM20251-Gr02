@@ -21,5 +21,6 @@
     <string name="university">Universidad</string>
     <string name="grade">Grado de escolaridad</string>
     <string name="final_button">llenar otro cuestionario</string>
+    <string name="country">País</string>
 
 </resources>

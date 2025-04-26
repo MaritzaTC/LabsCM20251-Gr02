@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Labs20251-Gr02</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="name_personal_info">First Name</string>
+    <string name="lastname_personal_info">Last Name</string>
+    <string name="sex_personal_info">Sex</string>
+    <string name="man_personal_info">Male</string>
+    <string name="women_personal_info">Female</string>
+    <string name="other_personal_info">Other</string>
+    <string name="contact_info">Contact Information</string>
+    <string name="phone_contact_info">Phone</string>
+    <string name="mail_contact_info">Email</string>
+    <string name="city_contact_info">City</string>
+    <string name="address_contact_info">Address</string>
+    <string name="next">Next</string>
+    <string name="date">Birth Date</string>
+    <string name="obligatory_data">Please complete all required fields</string>
+    <string name="final_form">Thanks! You have successfully completed the information.</string>
+    <string name="primary">Primary School</string>
+    <string name="secundary">Secondary School</string>
+    <string name="university">University</string>
+    <string name="grade">Education Level</string>
+    <string name="final_button">Fill another form</string>
+</resources>

@@ -12,20 +12,26 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 
 @Composable
 fun DropdownMenuEducation(
     selectedOption: String,
     onOptionSelected: (String) -> Unit
 ) {
-    val options = listOf("Primaria", "Secundaria", "Universidad")
+    val options = listOf(
+        stringResource(id = R.string.primary),
+        stringResource(id = R.string.secundary),
+        stringResource(id = R.string.university)
+    )
     var expanded by remember { mutableStateOf(false) }
 
     Column {
         OutlinedTextField(
             value = selectedOption,
             onValueChange = {},
-            label = { Text("Grado de escolaridad") },
+            label = { Text(stringResource(id = R.string.grade)) },
             trailingIcon = { Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "Expandir") },
             modifier = Modifier
                 .fillMaxWidth()

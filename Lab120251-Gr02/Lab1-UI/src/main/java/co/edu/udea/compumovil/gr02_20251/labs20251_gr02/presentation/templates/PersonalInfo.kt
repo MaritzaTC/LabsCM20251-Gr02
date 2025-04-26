@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PersonIcon
@@ -63,7 +64,7 @@ fun PersonalInfo(viewModel: UserInfoViewModel,  navController: NavController) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 DatePickerField(
-                    label = "Fecha de nacimiento",
+                    label = stringResource(id = R.string.date),
                     selectedDate = viewModel.birthDate.value,
                     onDateSelected = { viewModel.updateBirthDate(it) }
                 )
@@ -83,16 +84,12 @@ fun PersonalInfo(viewModel: UserInfoViewModel,  navController: NavController) {
                             viewModel.lastName.value.isNotBlank() &&
                             viewModel.birthDate.value.isNotBlank()
                         ) {
-                            println("Información personal:")
-                            println("${viewModel.name.value} ${viewModel.lastName.value}")
-                            println(viewModel.sex.value)
-                            println("Nació el ${viewModel.birthDate.value}")
-                            println(viewModel.educationLevel.value)
+
                             navController.navigate("contact")
                         } else {
                             Toast.makeText(
                                 context,
-                                "Por favor completa todos los campos obligatorios",
+                                context.getString(R.string.obligatory_data),
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
@@ -100,7 +97,7 @@ fun PersonalInfo(viewModel: UserInfoViewModel,  navController: NavController) {
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Siguiente")
+                    Text(text = stringResource(id = R.string.next))
                 }
             }
         }

@@ -13,6 +13,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MiUIOrientado(viewModel: UserInfoViewModel) {
+
     val navController = rememberNavController()
     val configuration = LocalConfiguration.current
     val orientation = configuration.orientation

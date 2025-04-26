@@ -12,7 +12,14 @@
     <string name="mail_contact_info">Mail</string>
     <string name="city_contact_info">Ciudad</string>
     <string name="address_contact_info">Dirección</string>
+    <string name="next">Siguiente</string>
+    <string name="date">Fecha de nacimiento</string>
+    <string name="obligatory_data">Por favor completa todos los campos obligatorios</string>
     <string name="final_form">Gracias! Por completar la información correctamente. </string>
+    <string name="primary">Primaria</string>
+    <string name="secundary">Secundaria</string>
+    <string name="university">Universidad</string>
+    <string name="grade">Grado de escolaridad</string>
     <string name="final_button">llenar otro cuestionario</string>
 
 </resources>

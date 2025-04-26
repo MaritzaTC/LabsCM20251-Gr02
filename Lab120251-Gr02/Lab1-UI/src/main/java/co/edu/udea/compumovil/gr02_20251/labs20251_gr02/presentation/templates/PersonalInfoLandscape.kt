@@ -1,5 +1,7 @@
 package co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.templates
 
+import android.R.attr.label
+import android.R.attr.text
 import android.os.Build
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -11,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PeopleIcon
@@ -22,10 +24,12 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.D
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.IconInput
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.GenderSelection
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.UserInfoViewModel
+import androidx.navigation.NavController
+
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun PersonalInfoLandscape(viewModel: UserInfoViewModel,  navController: NavController) {
+fun PersonalInfoLandscape(viewModel: UserInfoViewModel, navController: NavController) {
     val context = LocalContext.current
 
     Column(
@@ -43,7 +47,7 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel,  navController: NavContr
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .padding(end = 2.dp)
+                    .padding(end = 8.dp)
             ) {
                 IconInput(
                     icon = { PeopleIcon() },
@@ -58,12 +62,16 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel,  navController: NavContr
                     onValueChange = { viewModel.updateLastname(it) }
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                DatePickerField(
-                    label = "Fecha de nacimiento",
-                    selectedDate = viewModel.birthDate.value,
-                    onDateSelected = { viewModel.updateBirthDate(it) }
-                )
+
+                Box(modifier = Modifier.width(240.dp)) {
+                    DatePickerField(
+                        label = stringResource(id = R.string.date),
+                        selectedDate = viewModel.birthDate.value,
+                        onDateSelected = { viewModel.updateBirthDate(it) }
+                    )
+                }
             }
+
             Column(
                 modifier = Modifier
                     .weight(1f)
@@ -74,34 +82,37 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel,  navController: NavContr
                     onSexChange = { viewModel.updateSex(it) }
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                DropdownMenuEducation(
-                    selectedOption = viewModel.educationLevel.value,
-                    onOptionSelected = { viewModel.updateEducationLevel(it) }
-                )
+
+                Box(modifier = Modifier.width(240.dp)) {
+                    DropdownMenuEducation(
+                        selectedOption = viewModel.educationLevel.value,
+                        onOptionSelected = { viewModel.updateEducationLevel(it) }
+                    )
+                }
+
                 Spacer(modifier = Modifier.height(24.dp))
+
                 Button(
                     onClick = {
-                        if (viewModel.name.value.isNotBlank() &&
+                        if (
+                            viewModel.name.value.isNotBlank() &&
                             viewModel.lastName.value.isNotBlank() &&
                             viewModel.birthDate.value.isNotBlank()
                         ) {
-                            println("Información personal:")
-                            println("${viewModel.name.value} ${viewModel.lastName.value}")
-                            println(viewModel.sex.value)
-                            println("Nació el ${viewModel.birthDate.value}")
-                            println(viewModel.educationLevel.value)
                             navController.navigate("contact")
                         } else {
                             Toast.makeText(
                                 context,
-                                "Por favor completa todos los campos obligatorios",
+                                context.getString(R.string.obligatory_data),
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                     },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(end = 16.dp)
                 ) {
-                    Text("Siguiente")
+                    Text(text = stringResource(id = R.string.next))
                 }
             }
         }

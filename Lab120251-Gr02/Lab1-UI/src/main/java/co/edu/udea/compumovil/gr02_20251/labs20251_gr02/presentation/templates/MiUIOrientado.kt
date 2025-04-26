@@ -15,6 +15,7 @@ fun MiUIOrientado(viewModel: UserInfoViewModel) {
     when (orientation) {
         Configuration.ORIENTATION_PORTRAIT -> {
             PersonalInfo(viewModel)
+
         }
         Configuration.ORIENTATION_LANDSCAPE -> {
             PersonalInfoLandscape(viewModel)

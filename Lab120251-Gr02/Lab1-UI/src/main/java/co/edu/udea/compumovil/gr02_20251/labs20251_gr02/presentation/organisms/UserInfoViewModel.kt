@@ -16,6 +16,9 @@ class UserInfoViewModel : ViewModel() {
     var address = mutableStateOf("")
     var birthDate = mutableStateOf("")
     var educationLevel = mutableStateOf("")
+    var country = mutableStateOf("")
+
+
 
 
 
@@ -33,6 +36,10 @@ class UserInfoViewModel : ViewModel() {
 
     fun updateBirthDate(newDate: String) {
         birthDate.value = newDate
+    }
+
+    fun updateCountry(newCountry: String) {
+        country.value = newCountry
     }
 
 

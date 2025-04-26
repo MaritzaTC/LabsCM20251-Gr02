@@ -17,6 +17,7 @@ import androidx.navigation.NavController
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.AddressIcon
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.CityIcon
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.CountryAutocompleteInput
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.MailIcon
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PeopleIcon
@@ -30,6 +31,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun ContactInfo(viewModel: UserInfoViewModel,  navController: NavController) {
+
     Box(  modifier = Modifier
         .fillMaxSize(),){
         Column(
@@ -67,6 +69,11 @@ fun ContactInfo(viewModel: UserInfoViewModel,  navController: NavController) {
                     value = viewModel.address.value,
                     onValueChange = { viewModel.updateAddress(it) }
                 )
+                CountryAutocompleteInput(
+                    value = viewModel.country.value,
+                    onValueChange = { viewModel.updateCountry(it) }
+                )
+
                 Button(onClick = {navController.navigate("final")}) {
                     Text(stringResource(id = R.string.final_button))
                 }

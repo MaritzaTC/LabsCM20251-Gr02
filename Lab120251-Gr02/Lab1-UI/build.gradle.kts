@@ -3,7 +3,11 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
-
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
 android {
     namespace = "co.edu.udea.compumovil.gr02_20251.labs20251_gr02"
     compileSdk = 35
@@ -40,6 +44,9 @@ android {
 }
 
 dependencies {
+    val nav_version = "2.8.9"
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation ("androidx.core:core:1.16.0")
     implementation ("androidx.compose.ui:ui-graphics:1.4.0")

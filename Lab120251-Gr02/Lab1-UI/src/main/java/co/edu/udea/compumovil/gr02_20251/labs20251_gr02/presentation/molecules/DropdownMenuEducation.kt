@@ -3,6 +3,7 @@ package co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.DropdownMenu
@@ -13,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 
 @Composable
@@ -31,13 +33,17 @@ fun DropdownMenuEducation(
         OutlinedTextField(
             value = selectedOption,
             onValueChange = {},
-            label = { Text(stringResource(id = R.string.grade)) },
-            trailingIcon = { Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "Expandir") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { expanded = true },
+            label = { Text(stringResource(id = R.string.grade),
+                modifier = Modifier
+                    .clickable { expanded = true })
+                    },
+            trailingIcon = { Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "Expandir",
+                modifier = Modifier
+                    .clickable { expanded = true }) },
+
             readOnly = true,
-            enabled = true
+            enabled = true,
+            shape = RoundedCornerShape(15.dp),
         )
 
         DropdownMenu(

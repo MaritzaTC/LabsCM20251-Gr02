@@ -13,10 +13,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.tokens.MintGreen
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.tokens.SoftGray
 
@@ -46,7 +48,7 @@ fun CountryAutocompleteInput(
         Row(verticalAlignment = Alignment.CenterVertically) {
             CountryIcon()
             Spacer(modifier = Modifier.width(12.dp))
-            UserText(text = "País")
+            UserText(text = stringResource(id = R.string.country))
         }
         Spacer(modifier = Modifier.height(9.dp))
 

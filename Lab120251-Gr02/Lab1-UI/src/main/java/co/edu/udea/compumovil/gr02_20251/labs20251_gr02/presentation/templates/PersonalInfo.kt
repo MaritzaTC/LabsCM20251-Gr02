@@ -3,6 +3,7 @@ package co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.templates
 import android.os.Build
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -10,10 +11,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -29,6 +35,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.D
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.IconInput
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.GenderSelection
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.UserInfoViewModel
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.tokens.GreenToBlueGradient
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -77,28 +84,46 @@ fun PersonalInfo(viewModel: UserInfoViewModel,  navController: NavController) {
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
+                Box(
+                    modifier = Modifier
+                        .padding(35.dp)
+                        .fillMaxWidth()
+                        .background(GreenToBlueGradient, shape = RoundedCornerShape(15.dp)),
 
-                Button(
-                    onClick = {
-                        if (viewModel.name.value.isNotBlank() &&
-                            viewModel.lastName.value.isNotBlank() &&
-                            viewModel.birthDate.value.isNotBlank()
-                        ) {
+                    )
+                {
+                    Button(
+                        onClick = {
+                            if (viewModel.name.value.isNotBlank() &&
+                                viewModel.lastName.value.isNotBlank() &&
+                                viewModel.birthDate.value.isNotBlank()
+                            ) {
 
-                            navController.navigate("contact")
-                        } else {
-                            Toast.makeText(
-                                context,
-                                context.getString(R.string.obligatory_data),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                                navController.navigate("contact")
+                            } else {
+                                Toast.makeText(
+                                    context,
+                                    context.getString(R.string.obligatory_data),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
 
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(text = stringResource(id = R.string.next))
+                        },
+                        modifier = Modifier
+                            .align(Alignment.Center)
+                            .size(width = 147.dp, height = 44.dp),
+
+                        colors =
+                            ButtonDefaults.buttonColors(
+                            containerColor = Color.Transparent,
+                            contentColor = Color.Black
+                        )
+
+                    ) {
+                        Text(text = stringResource(id = R.string.next))
+                    }
                 }
+
             }
         }
     }

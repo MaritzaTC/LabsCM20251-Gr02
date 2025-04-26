@@ -7,8 +7,13 @@ class UserInfoViewModel : ViewModel() {
     var name = mutableStateOf("")
     var lastName = mutableStateOf("")
     var sex = mutableStateOf("")
+    var phone = mutableStateOf("")
+    var mail = mutableStateOf("")
+    var city = mutableStateOf("")
+    var address = mutableStateOf("")
     var birthDate = mutableStateOf("")
     var educationLevel = mutableStateOf("")
+
 
 
     fun updateName(newName: String) {
@@ -23,7 +28,6 @@ class UserInfoViewModel : ViewModel() {
         sex.value = newSexo
     }
 
-
     fun updateBirthDate(newDate: String) {
         birthDate.value = newDate
     }
@@ -33,6 +37,19 @@ class UserInfoViewModel : ViewModel() {
     fun updateEducationLevel(newEducation: String) {
         educationLevel.value = newEducation
     }
+    fun updatePhone(newPhone: String) {
+        phone.value = newPhone
+    }
 
+    fun updateMail(newMail: String) {
+        mail.value = newMail
+    }
 
+    fun updateCity(newCity: String) {
+        city.value = newCity
+    }
+
+    fun updateAddress(newAddress: String) {
+        address.value = newAddress
+    }
 }

@@ -26,12 +26,18 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.tokens.Soft
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun UserTextField(value: String, onValueChange: (String) -> Unit) {
+fun UserTextField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    keyboardType: KeyboardType = KeyboardType.Text,
+    capitalization: KeyboardCapitalization = KeyboardCapitalization.Words,
+    imeAction: androidx.compose.ui.text.input.ImeAction = androidx.compose.ui.text.input.ImeAction.Next
+) {
     Box(
         modifier = Modifier
             .width(217.dp)
             .height(41.dp)
-            .border(1.dp, (MintGreen), RoundedCornerShape(15.dp))
+            .border(1.dp, MintGreen, RoundedCornerShape(15.dp))
             .clip(RoundedCornerShape(12.dp))
             .background(SoftGray)
             .padding(horizontal = 8.dp)
@@ -41,18 +47,16 @@ fun UserTextField(value: String, onValueChange: (String) -> Unit) {
             onValueChange = onValueChange,
             maxLines = 1,
             keyboardOptions = KeyboardOptions(
-                capitalization = KeyboardCapitalization.Words,
-                keyboardType = KeyboardType.Text,
-                imeAction = androidx.compose.ui.text.input.ImeAction.Next,
+                capitalization = capitalization,
+                keyboardType = keyboardType,
+                imeAction = imeAction,
                 autoCorrect = false
             ),
             textStyle = TextStyle(
                 fontSize = 14.sp,
                 textAlign = TextAlign.Start
             ),
-            modifier = Modifier
-                .align(Alignment.CenterStart)
+            modifier = Modifier.align(Alignment.CenterStart)
         )
-
     }
 }

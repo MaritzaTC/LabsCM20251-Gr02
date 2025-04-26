@@ -13,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PeopleIcon
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.SimpleNavbar
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.TitleText
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.DatePickerField
@@ -44,11 +45,13 @@ fun PersonalInfoLandscape(viewModel: UserInfoViewModel) {
                     .padding(end = 8.dp)
             ) {
                 IconInput(
+                    icon = { PeopleIcon() },
                     textuser = stringResource(id = R.string.name_personal_info),
                     value = viewModel.name.value,
                     onValueChange = { viewModel.updateName(it) }
                 )
                 IconInput(
+                    icon = { PeopleIcon() },
                     textuser = stringResource(id = R.string.lastname_personal_info),
                     value = viewModel.lastName.value,
                     onValueChange = { viewModel.updateLastname(it) }

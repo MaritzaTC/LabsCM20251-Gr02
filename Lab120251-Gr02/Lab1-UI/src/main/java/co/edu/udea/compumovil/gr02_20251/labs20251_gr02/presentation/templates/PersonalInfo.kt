@@ -3,7 +3,13 @@ package co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.templates
 import android.os.Build
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.R
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.Logo
+import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.PersonIcon
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.SimpleNavbar
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.atoms.TitleText
 import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.molecules.DatePickerField
@@ -26,10 +33,7 @@ import co.edu.udea.compumovil.gr02_20251.labs20251_gr02.presentation.organisms.U
 fun PersonalInfo(viewModel: UserInfoViewModel) {
     val context = LocalContext.current
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
+    Box(modifier = Modifier.fillMaxSize()) {
         Column {
             SimpleNavbar()
             Logo()
@@ -39,11 +43,13 @@ fun PersonalInfo(viewModel: UserInfoViewModel) {
                     .padding(start = 70.dp, top = 16.dp, end = 70.dp)
             ) {
                 IconInput(
+                    icon = { PersonIcon() },
                     textuser = stringResource(id = R.string.name_personal_info),
                     value = viewModel.name.value,
                     onValueChange = { viewModel.updateName(it) }
                 )
                 IconInput(
+                    icon = { PersonIcon() },
                     textuser = stringResource(id = R.string.lastname_personal_info),
                     value = viewModel.lastName.value,
                     onValueChange = { viewModel.updateLastname(it) }
@@ -52,6 +58,7 @@ fun PersonalInfo(viewModel: UserInfoViewModel) {
                     selectedSex = viewModel.sex.value,
                     onSexChange = { viewModel.updateSex(it) }
                 )
+
                 Spacer(modifier = Modifier.height(16.dp))
 
                 DatePickerField(

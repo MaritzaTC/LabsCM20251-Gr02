@@ -31,9 +31,7 @@ fun DatePickerField(
     label: String,
     selectedDate: String,
     onDateSelected: (String) -> Unit,
-    focusedBorderColor: Color = Color.Blue, // Define el color del borde cuando tiene foco
-    unfocusedBorderColor: Color = Color.Gray, // Define el color del borde cuando no tiene foco
-    disabledBorderColor: Color = Color.LightGray
+
 ) {
     val context = LocalContext.current
     val calendar = Calendar.getInstance()

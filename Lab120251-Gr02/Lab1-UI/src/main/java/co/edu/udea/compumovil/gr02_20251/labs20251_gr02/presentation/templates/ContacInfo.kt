@@ -87,6 +87,7 @@ Box(
     onClick = {
         if (viewModel.phone.value.isNotBlank() &&
             viewModel.mail.value.isNotBlank() &&
+            isValidEmail(viewModel.mail.value) &&
             viewModel.country.value.isNotBlank()
         ) {
             navController.navigate("final")
@@ -96,6 +97,7 @@ Box(
                 context.getString(R.string.obligatory_data),
                 Toast.LENGTH_SHORT
             ).show()
+            
         }
     },
     modifier = Modifier
@@ -113,4 +115,9 @@ Box(
             }
         }
     }
+}
+
+fun isValidEmail(email: String): Boolean {
+    val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    return email.matches(Regex(emailRegex))
 }

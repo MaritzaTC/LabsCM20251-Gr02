@@ -14,12 +14,12 @@
     <string name="address_contact_info">Address</string>
     <string name="next">Next</string>
     <string name="date">Birth Date</string>
-    <string name="obligatory_data">Please complete all required fields</string>
+    <string name="obligatory_data">Please complete all required fields or verify email </string>
     <string name="final_form">Thanks! You have successfully completed the information.</string>
     <string name="primary">Primary School</string>
     <string name="secundary">Secondary School</string>
     <string name="university">University</string>
     <string name="grade">Education Level</string>
-    <string name="final_button">Fill another form</string>
+    <string name="final_button">Edit data</string>
     <string name="country">Country</string>
 </resources>

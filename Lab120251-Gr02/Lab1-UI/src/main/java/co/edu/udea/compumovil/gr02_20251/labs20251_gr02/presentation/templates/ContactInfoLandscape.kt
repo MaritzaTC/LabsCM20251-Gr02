@@ -113,6 +113,7 @@ fun ContactInfoLandscape(viewModel: UserInfoViewModel,navController: NavControll
                             onClick = {
                                 if (viewModel.phone.value.isNotBlank() &&
                                     viewModel.mail.value.isNotBlank() &&
+                                    isValidEmail(viewModel.mail.value) &&
                                     viewModel.country.value.isNotBlank()
                                 ) {
                                     navController.navigate("final")

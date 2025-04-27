@@ -31,7 +31,8 @@ fun UserTextField(
     onValueChange: (String) -> Unit,
     keyboardType: KeyboardType = KeyboardType.Text,
     capitalization: KeyboardCapitalization = KeyboardCapitalization.Words,
-    imeAction: androidx.compose.ui.text.input.ImeAction = androidx.compose.ui.text.input.ImeAction.Next
+    imeAction: androidx.compose.ui.text.input.ImeAction = androidx.compose.ui.text.input.ImeAction.Next,
+
 ) {
     Box(
         modifier = Modifier
@@ -50,12 +51,14 @@ fun UserTextField(
                 capitalization = capitalization,
                 keyboardType = keyboardType,
                 imeAction = imeAction,
-                autoCorrect = false
+                autoCorrect = false,
+                showKeyboardOnFocus = false,
             ),
             textStyle = TextStyle(
                 fontSize = 14.sp,
                 textAlign = TextAlign.Start
             ),
+
             modifier = Modifier.align(Alignment.CenterStart)
         )
     }

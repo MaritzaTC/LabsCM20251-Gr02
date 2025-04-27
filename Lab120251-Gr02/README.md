@@ -7,7 +7,7 @@
 - [X] [Luis Guillermo Sanchez Cubides ](https://github.com/GuillermoSanchez11)
 - [X] [Maritza Tabarez Cárdenas](https://github.com/MaritzaTC)
 
-> [!IMPORTANT]  
+> [!IMPORTANTE]  
 > Este laboratorio es con propositos acadèmicos .
 
 
@@ -37,4 +37,13 @@ Esta aplicación implementa dos formularios utilizando Jetpack Compose para la r
 - ViewModel (Arquitectura MVVM)
 - Material Design 3
 - Navigation Component
+  
+### Demo 
+
+https://github.com/user-attachments/assets/dd5d4dff-380a-4931-bf3b-6faaa839f2e1
+
+
+
+
+
 
